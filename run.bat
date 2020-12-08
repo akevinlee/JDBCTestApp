@@ -1,0 +1,1 @@
+java -cp lib\mssql-jdbc-8.2.0.jre8.jar -jar dist\JDBCTestApp-1.0.jar
