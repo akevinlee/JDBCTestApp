@@ -1,13 +1,14 @@
 <project name="JDBCTestApp" basedir="." default="dist">
 
     <property name="version">1.0</property>
+    <property name="mssql.jar">mssql-jdbc-8.2.0.jre8.jar</property>
     <property name="dir.src">src/main/java</property>
     <property name="dir.build">build</property>
     <property name="dir.build.classes">${dir.build}/classes</property>
     <property name="dir.build.javadoc">${dir.build}/javadoc</property>
     <property name="dir.lib">lib</property>
     <property name="dir.dist">dist</property>
-    <property name="file.jar">${dir.dist}/JDBCTestApp-${version}.jar</property>
+    <property name="file.jar">JDBCTestApp-${version}.jar</property>
 
 
     <path id="projectClasspath">
@@ -37,11 +38,11 @@
     <target name="dist" depends="compile">
         <echo>Making JAR file</echo>
         <manifest file="${dir.build}/META-INF/MANIFEST.MF">
-            <attribute name="Class-Path" value="JDBCTestApp-${ant.project.name}.jar" />
+            <attribute name="Class-Path" value="${mssql.jar} JDBCTestApp-${ant.project.name}.jar" />
             <attribute name="Main-Class" value="com.microfocus.jdbc.JdbcSQLServerConnection"/>
         </manifest>
 
-        <jar manifest="${dir.build}/META-INF/MANIFEST.MF" basedir="${dir.build.classes}" file="${file.jar}" />
+        <jar manifest="${dir.build}/META-INF/MANIFEST.MF" basedir="${dir.build.classes}" file="${dir.dist}/${file.jar}" />
 
     </target>
 

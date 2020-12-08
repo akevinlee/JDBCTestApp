@@ -9,6 +9,10 @@ To run execute:
 
 and enter the JDBC Url, username and password to test.
 
+Example JDBC URLS are:
+
+* jdbc:sqlserver://localhost:1433;database=<database_name>;sendStringParametersAsUnicode=false
+
 To (re)build execute:
 
 >ant

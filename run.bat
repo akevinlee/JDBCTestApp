@@ -1,1 +1,6 @@
-java -cp lib\mssql-jdbc-8.2.0.jre8.jar -jar dist\JDBCTestApp-1.0.jar
+@echo off
+set mypath=%cd%
+
+echo %mypath%
+
+java -jar dist\JDBCTestApp-1.0.jar
